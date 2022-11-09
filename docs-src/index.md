@@ -1,22 +1,26 @@
-# Coloque aqui o nome do tutorial de vocês
+# Processador RISC-V na FPGA
 
-- **Alunes:** .../ ... /...
+- **Alunes:** Luis Filipe Carrete
 - **Curso:** Engenharia da Computação
-- **Semestre:** 9
-- **Contato:** corsiferrao@gmail.com
-- **Ano:** 2020
+- **Semestre:** 7
+- **Contato:** luisfsc@al.insper.edu.br
+- **Ano:** 2022
 
 ## Começando
 
 Para seguir esse tutorial é necessário:
 
-- **Hardware:** DE10-Standard e acessórios
+- **Hardware:** DE0-CVs
 - **Softwares:** Quartus 18.01
-- **Documentos:** [DE10-Standard_User_manual.pdf](https://github.com/Insper/DE10-Standard-v.1.3.0-SystemCD/tree/master/Manual)
+- **Tutorial Base:** [Arquivos VHDL utilizados](https://github.com/stnolting/neorv32)
 
 ## Motivação
 
 Expliquem porque quiseram fazer esse tutorial.
+
+RISC (Rapid Instruction Set Computer) é uma arquitetura de processador, desenvolvida em 1981 na Universidade da Califórnia, Berkeley. Ela foi criada com a intenção de simplificar instruções individuais enviadas ao processador para resolver uma certa tarefa. Esse modelo foi criado para funcionar em contraste a arquitetura CISC (Complex Instruction Set Computer) que contém instruções mais robustas. Ou seja, uma instrução de uma arquitetura CISC faz muito mais que uma instrução do RISC, por isso um código para a arquitetura RISC tende a ser muito maior que um código para arquitetura CISC. Apesar disso, a arquitetura RISC tem como vantagem reduzir o tempo de processamento de cada instrução, pois as instruções são muito mais simples, ele utiliza estratégia de criar um pipeline no processador para que ele possa rodar múltiplas instruções em paralelo. 
+
+O RISC V é a quinta versão que hoje está com alta demanda no mercado com um [crescimento de 36.9% de 2021 - 2022](https://riscv.org/blog/2022/02/semico-researchs-new-report-predicts-there-will-be-25-billion-risc-v-based-ai-socs-by-2027/#:~:text=Semico%20Research%20forecasts%20that%20RISC,more%20traditional%20CPU%20SIP%20types), e com previsão de 34.9% de crescimento no mercado até 2027 resultando em uma receita esperada de $291 bilhões de dólares no mesmo ano. Isso é resultado de grandes empresas optarem pelo RISC em vez de processadores tradicionais. Com isso em mente, fica claro a importância desta arquitetura em nosso cenário atual.
 
 ----------------------------------------------
 
