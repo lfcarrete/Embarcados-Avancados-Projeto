@@ -13,6 +13,7 @@ Para seguir esse tutorial é necessário:
 - **Hardware:** DE0-C, FTDI Friend by Adafruit, 2 Jumpers Macho Femea e 1 Macho Macho
 - **Softwares:** Quartus 18.01 Funcionando (Com o USB Blaster funcional)
 - **Código Fonte:** [Arquivos VHDL utilizados](https://github.com/emb4fun/neorv32-examples)
+- **Ferramenta para Compilação de programas:** [RISC-V GNU Compiler Toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain)
 - **Exemplos de códigos:** [Exemplos de códigos em C para testar na RISCV](https://github.com/stnolting/neorv32)
 
 ## Motivação
@@ -33,7 +34,7 @@ Para iniciar o projeto a primeira coisa a ser feita é clonar o [repositório](h
 
 Como podemos ver após o clone existem diversos diretórios onde cada um deles seria o código compatível com placas específicas, para mais informações ler o readme do repositório. No nosso caso como nossa placa é a DE0-CV iremos focar somente neste diretório. 
 
-## Compilando 
+## Compilando o VHDL
 
 Agora basta abrir o quartus, selecionar Abrir Projeto e selecionar o arquivo com extensão .qpf no diretório \de0-cv\de0cv-neorv32-sdram-qsys\hw. Após isso, agora só resta conectar a placa com a sua máquina local e apertar o botão de play azul para compilar o programa para a placa.
 
@@ -48,98 +49,13 @@ A montagem deve estar igual a imagem a baixo:
 ![](pic1.jpeg){width=500}
 ![](pic2.jpeg){width=500}   
 
-## Abrindo 
-!!! info 
-    Essas duas partes são obrigatórias no tutorial:
-    
-    - Nome de vocês
-    - Começando
-    - Motivação
+## Compilando o Programa
 
-## Recursos Markdown
+Agora vamos baixar o repositório com exemplos de códigos C para testarmos e ver se realmente funciona o nosso processador RISC V. Vamos utilizar os exemplos dados por [este repositório](https://github.com/stnolting/neorv32). Então o primeiro passo seria cloná-lo para sua máquina local. Os exemplos a serem utilizados estão localizados no diretório /sw/example/. Podemos visualizar múltiplos exemplos, fique a vontade para testar os diferentes programas, mas para este tutorial vamos utilizar o exemplo demo_blink_led.
 
-Vocês podem usar tudo que já sabem de markdown mais alguns recursos:
+## RISC-V GNU Compiler Toolchain
 
-!!! note 
-    Bloco de destaque de texto, pode ser:
-    
-    - note, example, warning, info, tip, danger
-    
-!!! example "Faça assim"
-    É possível editar o título desses blocos
-    
-    !!! warning
-        Isso também é possível de ser feito, mas
-        use com parcimonia.
-    
-??? info 
-    Também da para esconder o texto, usar para coisas
-    muito grandes, ou exemplos de códigos.
-    
-    ```txt
-    ...
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    oi!
-    ```
-    
-- **Esse é um texto em destaque**
-- ==Pode fazer isso também==
+A última ferramenta que precisamos instalar é o RISC-V GNU Compiler Toolchain. A instalação pode ser vista no próprio [repositório](https://github.com/riscv-collab/riscv-gnu-toolchain). A instalação consiste em clonar o repositório para sua máquina local, instalar as dependências listadas no repositório, e rodar um comando make para instalar a ferramenta. Isso tudo para conseguirmos compilar o nosso programa em C para um assembly para o nosso RISCV. 
 
-Usar emojis da lista:
+## Ufa... Quanto setup... Agora vai!
 
-:two_hearts: - https://github.com/caiyongji/emoji-list
-
-
-```c
-// da para colocar códigos
- void main (void) {}
-```
-
-É legal usar abas para coisas desse tipo:
-    
-=== "C"
-
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
-
-=== "C++"
-
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
-
-Inserir vídeo:
-
--  Abra o youtube :arrow_right: clique com botão direito no vídeo :arrow_right: copia código de incorporação:
-
-<iframe width="630" height="450" src="https://www.youtube.com/embed/UIGsSLCoIhM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-!!! tip
-    Eu ajusto o tamanho do vídeo `width`/`height` para não ficar gigante na página
-    
-Imagens você insere como em plain markdown, mas tem a vantagem de poder mudar as dimensões com o marcador `{width=...}`
-    
-![](icon-elementos.png)
-
-![](icon-elementos.png){width=200}
