@@ -10,9 +10,10 @@
 
 Para seguir esse tutorial é necessário:
 
-- **Hardware:** DE0-CVs
-- **Softwares:** Quartus 18.01
-- **Tutorial Base:** [Arquivos VHDL utilizados](https://github.com/stnolting/neorv32)
+- **Hardware:** DE0-C, FTDI Friend by Adafruit, 2 Jumpers Macho Femea e 1 Macho Macho
+- **Softwares:** Quartus 18.01 Funcionando (Com o USB Blaster funcional)
+- **Código Fonte:** [Arquivos VHDL utilizados](https://github.com/emb4fun/neorv32-examples)
+- **Exemplos de códigos:** [Exemplos de códigos em C para testar na RISCV](https://github.com/stnolting/neorv32)
 
 ## Motivação
 
@@ -24,6 +25,30 @@ O RISC V é a quinta versão que hoje está com alta demanda no mercado com um [
 
 ----------------------------------------------
 
+# Iniciando o tutorial
+
+## Clonando o repositório
+
+Para iniciar o projeto a primeira coisa a ser feita é clonar o [repositório](https://github.com/emb4fun/neorv32-examples) , que contem o VHDL e todo código necessário para compilar um processador RISC V para a sua DE0-CV, para a sua máquina local.
+
+Como podemos ver após o clone existem diversos diretórios onde cada um deles seria o código compatível com placas específicas, para mais informações ler o readme do repositório. No nosso caso como nossa placa é a DE0-CV iremos focar somente neste diretório. 
+
+## Compilando 
+
+Agora basta abrir o quartus, selecionar Abrir Projeto e selecionar o arquivo com extensão .qpf no diretório \de0-cv\de0cv-neorv32-sdram-qsys\hw. Após isso, agora só resta conectar a placa com a sua máquina local e apertar o botão de play azul para compilar o programa para a placa.
+
+Caso os passos acima forem feitos com êxito podemos ir para a segunda parte.
+
+## Passando para a DE0-CV
+
+Agora que conseguimos criar e compilar o código devemos passá-lo para a placa. Como utilizaremos comunicação UART para transferir o binário, precisamos acrescentar algumas conexões físicas à nossa placa. No nosso caso utilizaremos a plaquinha FTDI friend para ser o homem do meio em nossa comunicação. Vamos conectá-la a nosso computador via USB, vamos agora pegar nosso jumper Macho Macho e conectar o ground da FTDI com o ground da CE0-CV. Agora pegamos os dois jumpers macho fêmea e vamos conectar um deles no pino TX da FTDI com o pino GPIO_1_D29 da DE0-CV e o outro jumper no pino RX da FTDI com o pino GPIO_1_D28 da DE0-CV. Assim nosso hardware está pronto para a transferência.
+
+A montagem deve estar igual a imagem a baixo:
+
+![](pic1.jpeg){width=500}
+![](pic2.jpeg){width=500}   
+
+## Abrindo 
 !!! info 
     Essas duas partes são obrigatórias no tutorial:
     
